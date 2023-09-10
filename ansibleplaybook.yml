@@ -1,0 +1,23 @@
+ - hosts: all
+   become: yes
+   tasks:
+   - yum: name=php state=latest
+ 
+ - hosts: all
+   become: yes
+   tasks:
+     - yum: name=httpd state=latest
+ - hosts: all
+   become: yes
+   tasks:
+     - copy: src=/var/www/html dest=/var/www/html 
+ - hosts: all 
+   become: yes
+   tasks:
+     - file: path=/tmp/newfile state=directory
+ - hosts: all
+   become: yes
+   tasks:
+     - file: path=/tmp/newfile state=touch
+
+
